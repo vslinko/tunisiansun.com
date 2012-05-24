@@ -26,8 +26,8 @@ class ProductAdmin extends Admin
             ->add('name')
             ->add('price')
             ->add('description')
-            ->add('category')
-            ->add('brand');
+            ->add('category', 'sonata_type_model')
+            ->add('brand', 'sonata_type_model');
     }
 
     protected function configureListFields(ListMapper $listMapper)

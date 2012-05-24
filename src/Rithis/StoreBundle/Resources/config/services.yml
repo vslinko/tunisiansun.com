@@ -1,8 +1,26 @@
 services:
+    rithis.store.admin.category:
+        class: Rithis\StoreBundle\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Store, label: Categories }
+        arguments:
+            - null
+            - Rithis\StoreBundle\Entity\Category
+            - RithisStoreBundle:CategoryAdmin
+
+    rithis.store.admin.brand:
+        class: Rithis\StoreBundle\Admin\BrandAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Store, label: Brands }
+        arguments:
+            - null
+            - Rithis\StoreBundle\Entity\Brand
+            - RithisStoreBundle:BrandAdmin
+
     rithis.store.admin.product:
         class: Rithis\StoreBundle\Admin\ProductAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: rithis_store, label: product }
+            - { name: sonata.admin, manager_type: orm, group: Store, label: Products }
         arguments:
             - null
             - Rithis\StoreBundle\Entity\Product
