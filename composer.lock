@@ -1,0 +1,96 @@
+{
+    "hash": "20efc8a5fe2d103cca4e2f81ca3115ba",
+    "packages": [
+        {
+            "package": "doctrine/common",
+            "version": "dev-master",
+            "source-reference": "f8e2aadf388ab1e6b36263a73d5e314c477f96c7"
+        },
+        {
+            "package": "doctrine/common",
+            "version": "dev-master",
+            "source-reference": "f8e2aadf388ab1e6b36263a73d5e314c477f96c7",
+            "alias-pretty-version": "2.3.x-dev",
+            "alias-version": "2.3.9999999.9999999-dev"
+        },
+        {
+            "package": "doctrine/dbal",
+            "version": "dev-master",
+            "source-reference": "4030787aa178b5c85d4717a75c43eb122edbd68d"
+        },
+        {
+            "package": "doctrine/dbal",
+            "version": "dev-master",
+            "source-reference": "4030787aa178b5c85d4717a75c43eb122edbd68d",
+            "alias-pretty-version": "2.3.x-dev",
+            "alias-version": "2.3.9999999.9999999-dev"
+        },
+        {
+            "package": "doctrine/doctrine-bundle",
+            "version": "dev-master",
+            "source-reference": "74632539010f1f8887e8afadf41a732efce971c1"
+        },
+        {
+            "package": "doctrine/orm",
+            "version": "dev-master",
+            "source-reference": "b32bb26a84e9302010e22b9051becc1b6052ba02"
+        },
+        {
+            "package": "doctrine/orm",
+            "version": "dev-master",
+            "source-reference": "b32bb26a84e9302010e22b9051becc1b6052ba02",
+            "alias-pretty-version": "2.3.x-dev",
+            "alias-version": "2.3.9999999.9999999-dev"
+        },
+        {
+            "package": "monolog/monolog",
+            "version": "1.1.0"
+        },
+        {
+            "package": "sensio/generator-bundle",
+            "version": "dev-master",
+            "source-reference": "0813379920dcaa4b06361501f654379383d75f16"
+        },
+        {
+            "package": "symfony/monolog-bundle",
+            "version": "dev-master",
+            "source-reference": "51a25acc57f4c027b28f0305976b887e2da6250a"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "e2c36c544d163e7da9934d43609c9f6b8082c828",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "e2c36c544d163e7da9934d43609c9f6b8082c828"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "573a36097146b319e5fb36546a0377c7440bbfe3"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "573a36097146b319e5fb36546a0377c7440bbfe3",
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "symfony/symfony": 20,
+        "symfony/monolog-bundle": 20,
+        "sensio/generator-bundle": 20,
+        "doctrine/orm": 20,
+        "doctrine/doctrine-bundle": 20
+    }
+}
