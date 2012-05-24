@@ -5,12 +5,18 @@
         "symfony/monolog-bundle": "dev-master",
         "sensio/generator-bundle": "dev-master",
         "doctrine/orm": "dev-master",
-        "doctrine/doctrine-bundle": "dev-master"
+        "doctrine/doctrine-bundle": "dev-master",
+        "doctrine/doctrine-fixtures-bundle": "dev-master"
     },
     "authors": [
         {
             "name": "Vyacheslav Slinko",
             "email": "vyacheslav.slinko@gmail.com"
         }
-    ]
+    ],
+    "autoload":{
+        "psr-0":{
+            "Rithis": "src"
+        }
+    }
 }

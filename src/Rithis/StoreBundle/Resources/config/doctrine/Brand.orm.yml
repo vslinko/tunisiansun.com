@@ -1,0 +1,15 @@
+Rithis\StoreBundle\Entity\Brand:
+    type: entity
+    table: brands
+    fields:
+        id:
+            type: integer
+            id: true
+            generator: { strategy: AUTO }
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        products:
+            targetEntity: Product
+            mappedBy: brand

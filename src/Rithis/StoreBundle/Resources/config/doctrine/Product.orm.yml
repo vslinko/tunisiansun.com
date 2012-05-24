@@ -1,0 +1,28 @@
+Rithis\StoreBundle\Entity\Product:
+    type: entity
+    table: products
+    fields:
+        id:
+            type: integer
+            id: true
+            generator: { strategy: AUTO }
+        name:
+            type: string
+            length: 255
+        price:
+            type: integer
+        description:
+            type: text
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: products
+            joinColumn:
+                name: category_id
+                referencedColumnName: id
+        brand:
+            targetEntity: Brand
+            inversedBy: products
+            joinColumn:
+                name: brand_id
+                referencedColumnName: id

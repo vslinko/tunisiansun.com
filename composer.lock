@@ -1,5 +1,5 @@
 {
-    "hash": "20efc8a5fe2d103cca4e2f81ca3115ba",
+    "hash": "e6863366c6ebada71c492461d488abb7",
     "packages": [
         {
             "package": "doctrine/common",
@@ -14,9 +14,9 @@
             "alias-version": "2.3.9999999.9999999-dev"
         },
         {
-            "package": "doctrine/dbal",
+            "package": "doctrine/data-fixtures",
             "version": "dev-master",
-            "source-reference": "4030787aa178b5c85d4717a75c43eb122edbd68d"
+            "source-reference": "f201391349f3dc6bd9c9c698927ea7c78104c461"
         },
         {
             "package": "doctrine/dbal",
@@ -26,14 +26,19 @@
             "alias-version": "2.3.9999999.9999999-dev"
         },
         {
+            "package": "doctrine/dbal",
+            "version": "dev-master",
+            "source-reference": "4030787aa178b5c85d4717a75c43eb122edbd68d"
+        },
+        {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
             "source-reference": "74632539010f1f8887e8afadf41a732efce971c1"
         },
         {
-            "package": "doctrine/orm",
+            "package": "doctrine/doctrine-fixtures-bundle",
             "version": "dev-master",
-            "source-reference": "b32bb26a84e9302010e22b9051becc1b6052ba02"
+            "source-reference": "33b267d3068d6c2f8daa0b417285cf76e7f82fc4"
         },
         {
             "package": "doctrine/orm",
@@ -41,6 +46,11 @@
             "source-reference": "b32bb26a84e9302010e22b9051becc1b6052ba02",
             "alias-pretty-version": "2.3.x-dev",
             "alias-version": "2.3.9999999.9999999-dev"
+        },
+        {
+            "package": "doctrine/orm",
+            "version": "dev-master",
+            "source-reference": "b32bb26a84e9302010e22b9051becc1b6052ba02"
         },
         {
             "package": "monolog/monolog",
@@ -59,14 +69,14 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e2c36c544d163e7da9934d43609c9f6b8082c828",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "e2c36c544d163e7da9934d43609c9f6b8082c828"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e2c36c544d163e7da9934d43609c9f6b8082c828"
+            "source-reference": "e2c36c544d163e7da9934d43609c9f6b8082c828",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
@@ -91,6 +101,7 @@
         "symfony/monolog-bundle": 20,
         "sensio/generator-bundle": 20,
         "doctrine/orm": 20,
-        "doctrine/doctrine-bundle": 20
+        "doctrine/doctrine-bundle": 20,
+        "doctrine/doctrine-fixtures-bundle": 20
     }
 }
