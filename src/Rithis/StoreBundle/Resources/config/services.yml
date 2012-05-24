@@ -1,0 +1,9 @@
+services:
+    rithis.store.admin.product:
+        class: Rithis\StoreBundle\Admin\ProductAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: rithis_store, label: product }
+        arguments:
+            - null
+            - Rithis\StoreBundle\Entity\Product
+            - RithisStoreBundle:ProductAdmin

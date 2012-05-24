@@ -6,8 +6,11 @@ framework:
     secret: %secret%
     charset: UTF-8
     router: { resource: "%kernel.root_dir%/config/routing.yml" }
-    templating:
-        engines: [twig]
+    templating: { engines: [twig] }
+    form: ~
+    csrf_protection: ~
+    session: { auto_start: true }
+    translator: ~
 
 doctrine:
     dbal:
@@ -21,3 +24,9 @@ doctrine:
         charset: UTF8
     orm:
         auto_mapping: true
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

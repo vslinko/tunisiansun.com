@@ -47,4 +47,9 @@ class Brand
     {
         return $this->products;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

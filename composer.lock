@@ -1,17 +1,9 @@
 {
-    "hash": "e6863366c6ebada71c492461d488abb7",
+    "hash": "53a47eb507132fa24c67758d13f7620a",
     "packages": [
         {
             "package": "doctrine/common",
-            "version": "dev-master",
-            "source-reference": "f8e2aadf388ab1e6b36263a73d5e314c477f96c7"
-        },
-        {
-            "package": "doctrine/common",
-            "version": "dev-master",
-            "source-reference": "f8e2aadf388ab1e6b36263a73d5e314c477f96c7",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
+            "version": "2.2.2"
         },
         {
             "package": "doctrine/data-fixtures",
@@ -20,15 +12,8 @@
         },
         {
             "package": "doctrine/dbal",
-            "version": "dev-master",
-            "source-reference": "4030787aa178b5c85d4717a75c43eb122edbd68d",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/dbal",
-            "version": "dev-master",
-            "source-reference": "4030787aa178b5c85d4717a75c43eb122edbd68d"
+            "version": "2.2.x-dev",
+            "source-reference": "f3effdb752519bfc7842a1005fd4cef55f7661e8"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -42,19 +27,31 @@
         },
         {
             "package": "doctrine/orm",
-            "version": "dev-master",
-            "source-reference": "b32bb26a84e9302010e22b9051becc1b6052ba02",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
+            "version": "2.2.x-dev",
+            "source-reference": "1f9435de5c3739551d73e4706405987d4ead6d9b"
         },
         {
-            "package": "doctrine/orm",
+            "package": "jms/translation-bundle",
             "version": "dev-master",
-            "source-reference": "b32bb26a84e9302010e22b9051becc1b6052ba02"
+            "source-reference": "a08ff9d59917363d8efc39ba2a21f5bf458b18b3"
+        },
+        {
+            "package": "knplabs/knp-menu",
+            "version": "1.1.x-dev",
+            "source-reference": "v1.1.1"
+        },
+        {
+            "package": "knplabs/knp-menu-bundle",
+            "version": "dev-master",
+            "source-reference": "v1.1.0"
         },
         {
             "package": "monolog/monolog",
             "version": "1.1.0"
+        },
+        {
+            "package": "nikic/php-parser",
+            "version": "v0.9.1"
         },
         {
             "package": "sensio/generator-bundle",
@@ -62,9 +59,46 @@
             "source-reference": "0813379920dcaa4b06361501f654379383d75f16"
         },
         {
+            "package": "sonata-project/admin-bundle",
+            "version": "dev-master",
+            "source-reference": "28b5c38bdd2e9c86e7f8f092411b1f17f5942709"
+        },
+        {
+            "package": "sonata-project/block-bundle",
+            "version": "dev-master",
+            "source-reference": "8609f372f02726460309a69b281152c56e9af8b9"
+        },
+        {
+            "package": "sonata-project/cache-bundle",
+            "version": "dev-master",
+            "source-reference": "5b966e7350636750df7e45920acb30946415ba6d"
+        },
+        {
+            "package": "sonata-project/doctrine-orm-admin-bundle",
+            "version": "dev-master",
+            "source-reference": "52ce03fb45bc8271f5741736f5c8fc6ff9091532"
+        },
+        {
+            "package": "sonata-project/exporter",
+            "version": "dev-master",
+            "source-reference": "bc5b4dadbaae30e5c349141f8d002063630a8084"
+        },
+        {
+            "package": "sonata-project/jquery-bundle",
+            "version": "dev-master",
+            "source-reference": "01ffb8d1a7a4bb3971aed003e4f1ef050a0701aa"
+        },
+        {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
             "source-reference": "51a25acc57f4c027b28f0305976b887e2da6250a"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "e2c36c544d163e7da9934d43609c9f6b8082c828",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
@@ -81,14 +115,14 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "573a36097146b319e5fb36546a0377c7440bbfe3"
+            "source-reference": "573a36097146b319e5fb36546a0377c7440bbfe3",
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "573a36097146b319e5fb36546a0377c7440bbfe3",
-            "alias-pretty-version": "1.8.x-dev",
-            "alias-version": "1.8.9999999.9999999-dev"
+            "source-reference": "573a36097146b319e5fb36546a0377c7440bbfe3"
         }
     ],
     "packages-dev": null,
@@ -100,8 +134,8 @@
         "symfony/symfony": 20,
         "symfony/monolog-bundle": 20,
         "sensio/generator-bundle": 20,
-        "doctrine/orm": 20,
         "doctrine/doctrine-bundle": 20,
-        "doctrine/doctrine-fixtures-bundle": 20
+        "doctrine/doctrine-fixtures-bundle": 20,
+        "sonata-project/doctrine-orm-admin-bundle": 20
     }
 }
