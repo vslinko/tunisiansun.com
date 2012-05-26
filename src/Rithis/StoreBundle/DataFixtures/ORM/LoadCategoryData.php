@@ -12,12 +12,14 @@ class LoadCategoryData extends AbstractFixture implements OrderedFixtureInterfac
     public function load(ObjectManager $manager)
     {
         $phones = new Category();
-        $phones->setName('phones');
+        $phones->setName('Phones');
+        $phones->setSlug('phones');
         $manager->persist($phones);
         $this->addReference('category-phones', $phones);
 
         $servers = new Category();
-        $servers->setName('servers');
+        $servers->setName('Servers');
+        $servers->setSlug('servers');
         $manager->persist($servers);
         $this->addReference('category-servers', $servers);
 

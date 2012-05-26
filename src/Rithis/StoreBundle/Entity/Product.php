@@ -8,6 +8,7 @@ class Product
 {
     private $id;
     private $name;
+    private $slug;
     private $price;
     private $description;
     private $category;
@@ -33,6 +34,16 @@ class Product
     public function getName()
     {
         return $this->name;
+    }
+
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     public function setPrice($price)

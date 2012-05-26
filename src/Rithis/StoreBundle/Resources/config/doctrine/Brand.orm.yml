@@ -9,6 +9,9 @@ Rithis\StoreBundle\Entity\Brand:
         name:
             type: string
             length: 255
+        slug:
+            type: string
+            length: 255
     oneToMany:
         products:
             targetEntity: Product

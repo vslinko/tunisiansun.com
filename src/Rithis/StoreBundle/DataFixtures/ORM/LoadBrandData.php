@@ -13,11 +13,13 @@ class LoadBrandData extends AbstractFixture implements OrderedFixtureInterface
     {
         $apple = new Brand();
         $apple->setName('Apple');
+        $apple->setSlug('apple');
         $manager->persist($apple);
         $this->addReference('brand-apple', $apple);
 
         $ibm = new Brand();
         $ibm->setName('IBM');
+        $ibm->setSlug('ibm');
         $manager->persist($ibm);
         $this->addReference('brand-ibm', $ibm);
 

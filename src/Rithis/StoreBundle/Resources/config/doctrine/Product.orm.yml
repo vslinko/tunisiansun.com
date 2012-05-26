@@ -9,6 +9,9 @@ Rithis\StoreBundle\Entity\Product:
         name:
             type: string
             length: 255
+        slug:
+            type: string
+            length: 255
         price:
             type: integer
         description:
