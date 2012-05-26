@@ -13,20 +13,24 @@ class CategoryAdmin extends Admin
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper->add('name');
+        $showMapper->add('slug');
     }
 
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper->add('name');
+        $formMapper->add('slug');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('name');
+        $listMapper->add('slug');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagrid)
     {
         $datagrid->add('name');
+        $datagrid->add('slug');
     }
 }

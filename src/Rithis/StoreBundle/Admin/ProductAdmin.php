@@ -14,6 +14,7 @@ class ProductAdmin extends Admin
     {
         $showMapper
             ->add('name')
+            ->add('slug')
             ->add('price')
             ->add('description')
             ->add('category')
@@ -24,6 +25,7 @@ class ProductAdmin extends Admin
     {
         $formMapper
             ->add('name')
+            ->add('slug')
             ->add('price')
             ->add('description')
             ->add('category', 'sonata_type_model')
@@ -34,6 +36,7 @@ class ProductAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->add('slug')
             ->add('price')
             ->add('category')
             ->add('brand');
@@ -43,6 +46,7 @@ class ProductAdmin extends Admin
     {
         $datagrid
             ->add('name')
+            ->add('slug')
             ->add('category')
             ->add('brand');
     }
