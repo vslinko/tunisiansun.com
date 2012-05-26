@@ -10,21 +10,21 @@ class Version20120526225613 extends AbstractMigration
     public function up(Schema $schema)
     {
         $brands = $schema->createTable('brands');
-        $brands->addColumn('id', 'integer');
+        $brands->addColumn('id', 'integer', array('autoincrement' => true));
         $brands->addColumn('name', 'string', array('length' => 255));
         $brands->addColumn('slug', 'string', array('length' => 255));
         $brands->setPrimaryKey(array('id'));
         $brands->addUniqueIndex(array('slug'));
 
         $categories = $schema->createTable('categories');
-        $categories->addColumn('id', 'integer');
+        $categories->addColumn('id', 'integer', array('autoincrement' => true));
         $categories->addColumn('name', 'string', array('length' => 255));
         $categories->addColumn('slug', 'string', array('length' => 255));
         $categories->setPrimaryKey(array('id'));
         $categories->addUniqueIndex(array('slug'));
 
         $products = $schema->createTable('products');
-        $products->addColumn('id', 'integer');
+        $products->addColumn('id', 'integer', array('autoincrement' => true));
         $products->addColumn('name', 'string', array('length' => 255));
         $products->addColumn('slug', 'string', array('length' => 255));
         $products->addColumn('price', 'integer');
