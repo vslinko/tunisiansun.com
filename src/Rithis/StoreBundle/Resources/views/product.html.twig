@@ -1,0 +1,14 @@
+<div>
+    {% spaceless %}
+    <h2>
+        <a href="{{ path("rithis_store_get_product", {categorySlug: product.category.slug, brandSlug: product.brand.slug, productSlug: product.slug}) }}">
+            {{ product.brand }}
+            {{ product }}
+        </a>
+    </h2>
+    {% endspaceless %}
+
+    <p>{{ product.description }}</p>
+
+    <p>Buy for {{ product.price }} USD</p>
+</div>

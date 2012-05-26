@@ -1,0 +1,17 @@
+rithis_store_get_category:
+    pattern: /{categorySlug}
+    defaults: { _controller: RithisStoreBundle:Categories:getCategory }
+    requirements:
+        _method: GET
+
+rithis_store_get_brand:
+    pattern: /{categorySlug}/{brandSlug}
+    defaults: { _controller: RithisStoreBundle:Brands:getBrand }
+    requirements:
+        _method: GET
+
+rithis_store_get_product:
+    pattern: /{categorySlug}/{brandSlug}/{productSlug}
+    defaults: { _controller: RithisStoreBundle:Products:getProduct }
+    requirements:
+        _method: GET

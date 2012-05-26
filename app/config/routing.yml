@@ -6,3 +6,6 @@ _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
+
+_rithis_store:
+    resource: "@RithisStoreBundle/Resources/config/routing.yml"

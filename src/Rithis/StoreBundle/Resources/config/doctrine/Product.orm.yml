@@ -1,5 +1,6 @@
 Rithis\StoreBundle\Entity\Product:
     type: entity
+    repositoryClass: Rithis\StoreBundle\Repository\ProductRepository
     table: products
     fields:
         id:
@@ -20,12 +21,14 @@ Rithis\StoreBundle\Entity\Product:
         category:
             targetEntity: Category
             inversedBy: products
+            fetch: EAGER
             joinColumn:
                 name: category_id
                 referencedColumnName: id
         brand:
             targetEntity: Brand
             inversedBy: products
+            fetch: EAGER
             joinColumn:
                 name: brand_id
                 referencedColumnName: id
