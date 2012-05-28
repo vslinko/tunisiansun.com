@@ -25,3 +25,8 @@ services:
             - null
             - Rithis\StoreBundle\Entity\Product
             - RithisStoreBundle:ProductAdmin
+
+    rithis.store.cart:
+        class: Rithis\StoreBundle\Cart\Cart
+        arguments:
+            - @session

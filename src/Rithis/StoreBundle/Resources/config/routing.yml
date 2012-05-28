@@ -1,3 +1,15 @@
+rithis_store_get_cart_products:
+    pattern: /cart/products
+    defaults: { _controller: RithisStoreBundle:Cart:getCartProducts }
+    requirements:
+        _method: GET
+
+rithis_store_post_cart_products:
+    pattern: /cart/products
+    defaults: { _controller: RithisStoreBundle:Cart:postCartProducts }
+    requirements:
+        _method: POST
+
 rithis_store_get_category:
     pattern: /{categorySlug}
     defaults: { _controller: RithisStoreBundle:Categories:getCategory }

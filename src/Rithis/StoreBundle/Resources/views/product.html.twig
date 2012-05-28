@@ -10,5 +10,8 @@
 
     <p>{{ product.description }}</p>
 
-    <p>Buy for {{ product.price }} USD</p>
+    <form action="{{ path("rithis_store_post_cart_products") }}" method="post">
+        <input type="hidden" name="id" value="{{ product.id }}">
+        <input type="submit" value="Buy for {{ product.price }} USD">
+    </form>
 </div>

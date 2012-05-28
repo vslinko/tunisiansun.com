@@ -1,5 +1,5 @@
 {
-    "hash": "c780b546df03c51107d8f3f9285cbe7a",
+    "hash": "7fdd55ff8559e767f1f09fcfd88f4cc2",
     "packages": [
         {
             "package": "doctrine/common",
@@ -39,6 +39,16 @@
             "package": "doctrine/orm",
             "version": "2.2.x-dev",
             "source-reference": "1f9435de5c3739551d73e4706405987d4ead6d9b"
+        },
+        {
+            "package": "jms/metadata",
+            "version": "dev-master",
+            "source-reference": "a2ae95448bd13bcfbba5f7fead40b379a84da02d"
+        },
+        {
+            "package": "jms/serializer-bundle",
+            "version": "dev-master",
+            "source-reference": "904e41c55e795939b487d956ab5ebba5baebdc23"
         },
         {
             "package": "jms/translation-bundle",
@@ -140,6 +150,7 @@
         "doctrine/doctrine-bundle": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
+        "jms/serializer-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20
     }
 }

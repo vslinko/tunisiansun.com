@@ -7,6 +7,7 @@
         "doctrine/doctrine-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/doctrine-migrations-bundle": "dev-master",
+        "jms/serializer-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master"
     },
     "authors": [

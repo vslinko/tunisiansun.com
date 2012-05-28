@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    {% for position in cart.positions %}
+        {{ position.count }} x {% include "RithisStoreBundle::product.html.twig" with {product: position.product} %}
+    {% endfor %}
+    <hr />
+    {{ cart.totalPrice }} USD
+{% endblock %}
