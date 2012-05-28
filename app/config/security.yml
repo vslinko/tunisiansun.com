@@ -1,0 +1,30 @@
+security:
+    encoders:
+        Rithis\StoreBundle\Entity\Customer: sha512
+
+    providers:
+        default:
+            chain:
+                providers: [email, phone]
+        email:
+            entity:
+                class: RithisStoreBundle:Customer
+                property: email
+        phone:
+            entity:
+                class: RithisStoreBundle:Customer
+                property: phone
+
+    firewalls:
+        secured_area:
+            pattern: ^
+            logout: true
+            anonymous: true
+            form_login: true
+
+    access_control:
+        - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER

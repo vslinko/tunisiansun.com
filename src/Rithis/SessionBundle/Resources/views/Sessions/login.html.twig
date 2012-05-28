@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<form action="{{ path("rithis_session_login_check") }}" method="post">
+    {% if error %}
+    <p>{{ error.message }}</p>
+    {% endif %}
+
+    <p><label>Username <input name="_username" value="{{ last_username }}"></label></p>
+
+    <p><label>Password <input type="password" name="_password"></label></p>
+
+    <p><input type="submit"></p>
+</form>
+{% endblock%}

@@ -1,0 +1,13 @@
+rithis_session_login:
+    pattern: /login
+    defaults: { _controller: RithisSessionBundle:Sessions:login }
+    requirements:
+        _method: GET
+
+rithis_session_login_check:
+    pattern: /login_check
+    requirements:
+        _method: POST
+
+rithis_session_logout:
+    pattern: /logout

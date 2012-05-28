@@ -26,6 +26,15 @@ services:
             - Rithis\StoreBundle\Entity\Product
             - RithisStoreBundle:ProductAdmin
 
+    rithis.store.admin.customer:
+        class: Rithis\StoreBundle\Admin\CustomerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Store, label: Customers }
+        arguments:
+            - null
+            - Rithis\StoreBundle\Entity\Customer
+            - RithisStoreBundle:CustomerAdmin
+
     rithis.store.cart:
         class: Rithis\StoreBundle\Cart\Cart
         arguments:

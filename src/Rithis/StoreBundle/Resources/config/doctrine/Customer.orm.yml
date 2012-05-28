@@ -1,0 +1,25 @@
+Rithis\StoreBundle\Entity\Customer:
+    type: entity
+    table: customers
+    fields:
+        id:
+            type: integer
+            id: true
+            generator: { strategy: AUTO }
+        email:
+            type: string
+            length: 255
+        phone:
+            type: integer
+        name:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        salt:
+            type: string
+            length: 32
+        admin:
+            type: boolean
+            column: is_admin
