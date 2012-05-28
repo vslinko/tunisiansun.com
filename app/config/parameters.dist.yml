@@ -4,7 +4,7 @@ parameters:
     database_driver: pdo_mysql
     database_host: localhost
     database_port: ~
-    database_name: tunisiantreasure
+    database_name: tunisiansun
     database_user: root
     database_password: ~
     database_path: ~

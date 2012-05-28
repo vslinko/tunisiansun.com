@@ -1,5 +1,5 @@
 {
-    "name": "rithis/tunisiantreasure.com",
+    "name": "rithis/tunisiansun.com",
     "require": {
         "symfony/symfony": "dev-master",
         "symfony/monolog-bundle": "dev-master",
