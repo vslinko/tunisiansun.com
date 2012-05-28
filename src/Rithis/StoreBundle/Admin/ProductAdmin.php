@@ -17,6 +17,7 @@ class ProductAdmin extends Admin
             ->add('slug')
             ->add('price')
             ->add('description')
+            ->add('photo')
             ->add('category')
             ->add('brand');
     }
@@ -28,6 +29,7 @@ class ProductAdmin extends Admin
             ->add('slug')
             ->add('price')
             ->add('description')
+            ->add('photo', 'file')
             ->add('category', 'sonata_type_model')
             ->add('brand', 'sonata_type_model');
     }

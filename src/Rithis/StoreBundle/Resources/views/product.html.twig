@@ -8,7 +8,7 @@
     </h2>
     {% endspaceless %}
 
-    <p>{{ product.description }}</p>
+    <p>{% if product.photo %}<img src="{{ rithis_store_asset_url(product.photo) }}" alt="{{ product.brand.name }} {{ product.name }}">{% endif %}{{ product.description }}</p>
 
     <form action="{{ path("rithis_store_post_cart_products") }}" method="post">
         <input type="hidden" name="id" value="{{ product.id }}">

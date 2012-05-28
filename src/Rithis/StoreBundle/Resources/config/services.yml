@@ -30,3 +30,14 @@ services:
         class: Rithis\StoreBundle\Cart\Cart
         arguments:
             - @session
+
+    rithis.store.listener.product_photo_uploader:
+        class: Rithis\StoreBundle\Listener\ProductPhotoUploader
+        tags:
+            - { name: doctrine.event_listener, event: postPersist }
+            - { name: doctrine.event_listener, event: postUpdate }
+
+    rithis.store.twig.store_extension:
+        class: Rithis\StoreBundle\Twig\StoreExtension
+        tags:
+            - { name: twig.extension }

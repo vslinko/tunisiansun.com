@@ -8,3 +8,5 @@ parameters:
     database_user: root
     database_password: ~
     database_path: ~
+
+    asset_url_pattern: http://tunisiansun.com/uploads/store/%s

@@ -15,6 +15,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
 
             new JMS\TranslationBundle\JMSTranslationBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),

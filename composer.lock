@@ -1,5 +1,5 @@
 {
-    "hash": "7fdd55ff8559e767f1f09fcfd88f4cc2",
+    "hash": "ac19db0821d84109be0aa6d754c9d050",
     "packages": [
         {
             "package": "doctrine/common",
@@ -54,6 +54,16 @@
             "package": "jms/translation-bundle",
             "version": "dev-master",
             "source-reference": "a08ff9d59917363d8efc39ba2a21f5bf458b18b3"
+        },
+        {
+            "package": "knplabs/gaufrette",
+            "version": "dev-master",
+            "source-reference": "9896a5d086090f0a424aa06beb2866fceae4bf53"
+        },
+        {
+            "package": "knplabs/knp-gaufrette-bundle",
+            "version": "dev-master",
+            "source-reference": "b414f4f142c4e0833707c815ec838bb6ee243f42"
         },
         {
             "package": "knplabs/knp-menu",
@@ -151,6 +161,7 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/doctrine-migrations-bundle": 20,
         "jms/serializer-bundle": 20,
+        "knplabs/knp-gaufrette-bundle": 20,
         "sonata-project/doctrine-orm-admin-bundle": 20
     }
 }

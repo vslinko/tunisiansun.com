@@ -11,6 +11,7 @@ class Product
     private $slug;
     private $price;
     private $description;
+    private $photo;
     private $category;
     private $brand;
 
@@ -66,6 +67,16 @@ class Product
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    public function getPhoto()
+    {
+        return $this->photo;
     }
 
     public function setCategory(Category $category)

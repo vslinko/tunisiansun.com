@@ -17,6 +17,10 @@ Rithis\StoreBundle\Entity\Product:
             type: integer
         description:
             type: text
+        photo:
+            type: string
+            length: 255
+            nullable: true
     manyToOne:
         category:
             targetEntity: Category

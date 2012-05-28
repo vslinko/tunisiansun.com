@@ -32,3 +32,15 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+knp_gaufrette:
+    adapters:
+        rithis_store:
+            local:
+                directory: "%kernel.root_dir%/../web/uploads/store"
+    filesystems:
+        rithis_store:
+            adapter: rithis_store
+
+rithis_store:
+    asset_url_pattern: %asset_url_pattern%
