@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Rithis\StoreBundle\Form\Type\OrderType;
+use Rithis\StoreBundle\Cart\CartInterface;
+use Rithis\StoreBundle\Entity\Order;
+use Rithis\StoreBundle\Entity\Position;
 
 class CartController extends Controller
 {
@@ -20,29 +23,43 @@ class CartController extends Controller
         ));
     }
 
-    public function postCartAction()
+    public function postCartAction(Request $request)
     {
+        $cart = $this->get('rithis.store.cart');
+        $em = $this->getDoctrine()->getEntityManager();
 
+        $positions = $this->prepareOrder($request->request->get('order'), $cart);
+
+        $orderEntity = new Order();
+
+        $this->getUser()->addOrder($orderEntity);
+
+        $em->persist($orderEntity);
+        $em->flush($orderEntity);
+
+        foreach ($positions as $position) {
+            $positionEntity = new Position();
+            $positionEntity->setProduct($position['product']);
+            $positionEntity->setCount($position['count']);
+            $positionEntity->setPrice($positionEntity->getProduct()->getPrice());
+
+            $orderEntity->addPosition($positionEntity);
+
+            $em->persist($positionEntity);
+        }
+
+        $em->flush();
+
+        $cart->erase();
+
+        return $this->redirect($this->generateUrl('rithis_store_get_cart'));
     }
 
     public function patchCartAction(Request $request)
     {
-        $order = $request->request->get('order');
         $cart = $this->get('rithis.store.cart');
-        $positions = array();
 
-        foreach ($order['positions'] as $position) {
-            if ($position['count'] <= 0) {
-                continue;
-            }
-
-            $id = $position['product']['id'];
-
-            $positions[$id] = array(
-                'product' => $cart->getProduct($id),
-                'count' => $position['count'],
-            );
-        }
+        $positions = $this->prepareOrder($request->request->get('order'), $cart);
 
         $cart->setPositions($positions);
 
@@ -80,5 +97,25 @@ class CartController extends Controller
                 return $this->redirect($this->generateUrl('rithis_store_get_cart'));
             }
         }
+    }
+
+    private function prepareOrder($order, CartInterface $cart)
+    {
+        $positions = array();
+
+        foreach ($order['positions'] as $position) {
+            if ($position['count'] <= 0) {
+                continue;
+            }
+
+            $id = $position['product']['id'];
+
+            $positions[$id] = array(
+                'product' => $cart->getProduct($id),
+                'count' => $position['count'],
+            );
+        }
+
+        return $positions;
     }
 }

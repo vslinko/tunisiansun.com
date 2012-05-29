@@ -3,6 +3,7 @@
 namespace Rithis\StoreBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 use Rithis\StoreBundle\Cart\CartInterface;
 
 class Customer implements UserInterface
@@ -15,6 +16,12 @@ class Customer implements UserInterface
     private $salt;
     private $admin;
     private $cart;
+    private $orders;
+
+    public function __construct()
+    {
+        $this->orders = new ArrayCollection();
+    }
 
     public function setId($id)
     {
@@ -99,6 +106,18 @@ class Customer implements UserInterface
     public function getCart()
     {
         return $this->cart;
+    }
+
+    public function addOrder(Order $order)
+    {
+        $this->orders[] = $order;
+        $order->setCustomer($this);
+        return $this;
+    }
+
+    public function getOrders()
+    {
+        return $this->orders;
     }
 
     public function getRoles()

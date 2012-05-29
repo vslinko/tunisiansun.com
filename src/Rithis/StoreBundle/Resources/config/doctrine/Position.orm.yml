@@ -1,0 +1,26 @@
+Rithis\StoreBundle\Entity\Position:
+    type: entity
+    table: positions
+    id:
+        order:
+            associationKey: true
+        product:
+            associationKey: true
+    fields:
+        count:
+            type: integer
+        price:
+            type: integer
+    manyToOne:
+        order:
+            targetEntity: Order
+            inversedBy: positions
+            joinColumn:
+                name: order_id
+                referencedColumnName: id
+    oneToOne:
+        product:
+            targetEntity: Product
+            joinColumn:
+                name: product_id
+                referencedColumnName: id

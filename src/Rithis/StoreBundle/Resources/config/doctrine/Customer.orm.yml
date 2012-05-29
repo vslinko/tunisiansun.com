@@ -25,3 +25,7 @@ Rithis\StoreBundle\Entity\Customer:
             column: is_admin
         cart:
             type: object
+    oneToMany:
+        orders:
+            targetEntity: Order
+            mappedBy: customer

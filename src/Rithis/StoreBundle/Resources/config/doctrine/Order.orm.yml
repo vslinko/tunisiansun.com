@@ -1,0 +1,19 @@
+Rithis\StoreBundle\Entity\Order:
+    type: entity
+    table: orders
+    fields:
+        id:
+            type: integer
+            id: true
+            generator: { strategy: AUTO }
+    oneToMany:
+        positions:
+            targetEntity: Position
+            mappedBy: order
+    manyToOne:
+        customer:
+            targetEntity: Customer
+            inversedBy: orders
+            joinColumn:
+                name: customer_id
+                referencedColumnName: id

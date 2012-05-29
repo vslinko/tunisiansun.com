@@ -25,6 +25,7 @@ security:
 
     access_control:
         - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/cart$, role: ROLE_USER }
         - { path: ^, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
     role_hierarchy:

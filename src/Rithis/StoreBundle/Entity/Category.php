@@ -48,9 +48,10 @@ class Category
         return $this->slug;
     }
 
-    public function addProduct(Product $products)
+    public function addProduct(Product $product)
     {
-        $this->products[] = $products;
+        $this->products[] = $product;
+        $product->setCategory($this);
         return $this;
     }
 

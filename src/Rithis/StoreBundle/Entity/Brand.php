@@ -48,9 +48,10 @@ class Brand
         return $this->slug;
     }
 
-    public function addProduct(Product $products)
+    public function addProduct(Product $product)
     {
-        $this->products[] = $products;
+        $this->products[] = $product;
+        $product->setBrand($this);
         return $this;
     }
 
