@@ -25,6 +25,7 @@ Rithis\StoreBundle\Entity\Customer:
             column: is_admin
         cart:
             type: object
+            nullable: true
     oneToMany:
         orders:
             targetEntity: Order
