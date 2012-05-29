@@ -5,6 +5,7 @@ namespace Rithis\StoreBundle\Entity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Rithis\StoreBundle\Cart\CartInterface;
+use Rithis\StoreBundle\Cart\ArrayCart;
 
 class Customer implements UserInterface
 {
@@ -21,6 +22,7 @@ class Customer implements UserInterface
     public function __construct()
     {
         $this->orders = new ArrayCollection();
+        $this->cart = new ArrayCart();
     }
 
     public function setId($id)
