@@ -3,6 +3,7 @@
 namespace Rithis\StoreBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+use Rithis\StoreBundle\Cart\CartInterface;
 
 class Customer implements UserInterface
 {
@@ -13,6 +14,7 @@ class Customer implements UserInterface
     private $password;
     private $salt;
     private $admin;
+    private $cart;
 
     public function setId($id)
     {
@@ -87,6 +89,16 @@ class Customer implements UserInterface
     public function isAdmin()
     {
         return $this->admin;
+    }
+
+    public function setCart(CartInterface $cart)
+    {
+        $this->cart = $cart;
+    }
+
+    public function getCart()
+    {
+        return $this->cart;
     }
 
     public function getRoles()

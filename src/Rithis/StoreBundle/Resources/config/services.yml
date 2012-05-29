@@ -36,8 +36,12 @@ services:
             - RithisStoreBundle:CustomerAdmin
 
     rithis.store.cart:
-        class: Rithis\StoreBundle\Cart\Cart
+        class: Rithis\StoreBundle\Cart\CartInterface
+        factory_class: Rithis\StoreBundle\Cart\CartFactory
+        factory_method: factory
         arguments:
+            - @security.context
+            - @doctrine.orm.entity_manager
             - @session
 
     rithis.store.listener.product_photo_uploader:

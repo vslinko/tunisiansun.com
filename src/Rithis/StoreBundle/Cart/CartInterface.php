@@ -8,7 +8,11 @@ interface CartInterface
 {
     function addPosition(Product $product);
 
+    function setPositions(array $positions);
+
     function getPositions();
 
     function getTotalPrice();
+
+    function erase();
 }

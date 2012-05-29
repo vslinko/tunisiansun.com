@@ -23,3 +23,5 @@ Rithis\StoreBundle\Entity\Customer:
         admin:
             type: boolean
             column: is_admin
+        cart:
+            type: object

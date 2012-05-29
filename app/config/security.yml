@@ -18,7 +18,8 @@ security:
     firewalls:
         secured_area:
             pattern: ^
-            logout: true
+            logout:
+                invalidate_session: false
             anonymous: true
             form_login: true
 
