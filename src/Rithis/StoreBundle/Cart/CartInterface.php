@@ -12,6 +12,8 @@ interface CartInterface
 
     function getPositions();
 
+    function getProduct($id);
+
     function getTotalPrice();
 
     function erase();

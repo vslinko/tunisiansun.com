@@ -1,9 +1,40 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    {% for position in cart.positions %}
-        {{ position.count }} x {% include "RithisStoreBundle::product.html.twig" with {product: position.product} %}
-    {% endfor %}
-    <hr />
-    {{ cart.totalPrice }} USD
+<form action="{{ path("rithis_store_post_cart") }}" method="post">
+    <table>
+        <tfoot>
+        <tr>
+            <th colspan="3" align="right">Total:</th>
+            <td colspan="2">{{ cart.totalPrice }} USD</td>
+        </tr>
+        <tr>
+            <td colspan="3" align="right">
+                <button type="submit" name="_method" value="patch">Refresh</button>
+            </td>
+            <td align="right">
+                <input type="submit" value="Order">
+            </td>
+        </tr>
+        </tfoot>
+        <tbody>
+        {% for position in form.positions %}
+        <tr>
+            <td>
+                {% set product = cart.getProduct(position.product.id.vars.value) %}
+                {{ form_widget(position.product) }}
+                {{ product.brand.name }} {{ product.name }}
+            </td>
+            <td>{{ product.price }} USD</td>
+            <td>
+                {{ form_widget(position.count) }}
+            </td>
+            <td>
+                {{ product.price * position.count.vars.value }} USD
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</form>
 {% endblock %}

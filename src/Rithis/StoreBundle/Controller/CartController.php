@@ -5,9 +5,50 @@ namespace Rithis\StoreBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Rithis\StoreBundle\Form\Type\OrderType;
 
 class CartController extends Controller
 {
+    public function getCartAction()
+    {
+        $cart = $this->get('rithis.store.cart');
+        $form = $this->createForm(new OrderType(), $cart);
+
+        return $this->render('RithisStoreBundle:Cart:getCartProducts.html.twig', array(
+            'cart' => $cart,
+            'form' => $form->createView(),
+        ));
+    }
+
+    public function postCartAction()
+    {
+
+    }
+
+    public function patchCartAction(Request $request)
+    {
+        $order = $request->request->get('order');
+        $cart = $this->get('rithis.store.cart');
+        $positions = array();
+
+        foreach ($order['positions'] as $position) {
+            if ($position['count'] <= 0) {
+                continue;
+            }
+
+            $id = $position['product']['id'];
+
+            $positions[$id] = array(
+                'product' => $cart->getProduct($id),
+                'count' => $position['count'],
+            );
+        }
+
+        $cart->setPositions($positions);
+
+        return $this->redirect($this->generateUrl('rithis_store_get_cart'));
+    }
+
     public function postCartProductsAction(Request $request)
     {
         $id = $request->request->get('id');
@@ -36,15 +77,8 @@ class CartController extends Controller
             if ($request->server->has('HTTP_REFERER')) {
                 return $this->redirect($request->server->get('HTTP_REFERER'));
             } else {
-                return $this->redirect($this->generateUrl('rithis_store_get_cart_products'));
+                return $this->redirect($this->generateUrl('rithis_store_get_cart'));
             }
         }
-    }
-
-    public function getCartProductsAction()
-    {
-        return $this->render('RithisStoreBundle:Cart:getCartProducts.html.twig', array(
-            'cart' => $this->get('rithis.store.cart'),
-        ));
     }
 }

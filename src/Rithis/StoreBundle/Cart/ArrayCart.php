@@ -35,6 +35,15 @@ class ArrayCart implements CartInterface, \Serializable
         return $this->positions;
     }
 
+    public function getProduct($id)
+    {
+        $positions = $this->getPositions();
+
+        if (isset($positions[$id])) {
+            return $positions[$id]['product'];
+        }
+    }
+
     public function getTotalPrice()
     {
         $price = 0;
