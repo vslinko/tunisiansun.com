@@ -4,7 +4,7 @@ namespace Rithis\StoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Order
+class Order implements \Serializable
 {
     private $id;
     private $positions;
@@ -29,6 +29,7 @@ class Order
     public function addPosition(Position $position)
     {
         $this->positions[] = $position;
+        $position->setOrder($this);
         return $this;
     }
 
@@ -45,5 +46,15 @@ class Order
     public function getCustomer()
     {
         return $this->customer;
+    }
+
+    public function serialize()
+    {
+        return serialize(array($this->id, $this->positions, $this->customer));
+    }
+
+    public function unserialize($serialized)
+    {
+        list($this->id, $this->positions, $this->customer) = unserialize($serialized);
     }
 }

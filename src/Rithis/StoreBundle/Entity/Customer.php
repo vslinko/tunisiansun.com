@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Rithis\StoreBundle\Cart\CartInterface;
 use Rithis\StoreBundle\Cart\ArrayCart;
 
-class Customer implements UserInterface
+class Customer implements UserInterface, \Serializable
 {
     private $id;
     private $email;
@@ -16,13 +16,11 @@ class Customer implements UserInterface
     private $password;
     private $salt;
     private $admin;
-    private $cart;
     private $orders;
 
     public function __construct()
     {
         $this->orders = new ArrayCollection();
-        $this->cart = new ArrayCart();
     }
 
     public function setId($id)
@@ -100,16 +98,6 @@ class Customer implements UserInterface
         return $this->admin;
     }
 
-    public function setCart(CartInterface $cart)
-    {
-        $this->cart = $cart;
-    }
-
-    public function getCart()
-    {
-        return $this->cart;
-    }
-
     public function addOrder(Order $order)
     {
         $this->orders[] = $order;
@@ -129,5 +117,17 @@ class Customer implements UserInterface
 
     public function eraseCredentials()
     {
+    }
+
+    public function serialize()
+    {
+        return serialize(array($this->id, $this->email, $this->phone, $this->name, $this->password, $this->salt,
+            $this->admin, $this->orders));
+    }
+
+    public function unserialize($serialized)
+    {
+        list($this->id, $this->email, $this->phone, $this->name, $this->password, $this->salt, $this->admin,
+            $this->orders) = unserialize($serialized);
     }
 }

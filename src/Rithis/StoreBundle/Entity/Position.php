@@ -4,7 +4,7 @@ namespace Rithis\StoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Position
+class Position implements \Serializable
 {
     private $order;
     private $product;
@@ -49,5 +49,15 @@ class Position
     public function getPrice()
     {
         return $this->price;
+    }
+
+    public function serialize()
+    {
+        return serialize(array($this->order, $this->product, $this->count, $this->price));
+    }
+
+    public function unserialize($serialized)
+    {
+        list($this->order, $this->product, $this->count, $this->price) = unserialize($serialized);
     }
 }

@@ -4,7 +4,7 @@ namespace Rithis\StoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Product
+class Product implements \Serializable
 {
     private $id;
     private $name;
@@ -102,5 +102,17 @@ class Product
     public function __toString()
     {
         return $this->getName();
+    }
+
+    public function serialize()
+    {
+        return serialize(array($this->id, $this->name, $this->slug, $this->price, $this->description, $this->photo,
+            $this->category, $this->brand));
+    }
+
+    public function unserialize($serialized)
+    {
+        list($this->id, $this->name, $this->slug, $this->price, $this->description, $this->photo, $this->category,
+            $this->brand) = unserialize($serialized);
     }
 }

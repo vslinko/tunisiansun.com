@@ -25,7 +25,7 @@ class ArrayCart implements CartInterface, \Serializable
         $this->setPositions($positions);
     }
 
-    function setPositions(array $positions)
+    public function setPositions(array $positions)
     {
         $this->positions = $positions;
     }

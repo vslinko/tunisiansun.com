@@ -38,10 +38,12 @@ class CartController extends Controller
         $em->flush($orderEntity);
 
         foreach ($positions as $position) {
+            $product = $em->merge($position['product']);
+
             $positionEntity = new Position();
-            $positionEntity->setProduct($position['product']);
+            $positionEntity->setProduct($product);
             $positionEntity->setCount($position['count']);
-            $positionEntity->setPrice($positionEntity->getProduct()->getPrice());
+            $positionEntity->setPrice($product->getPrice());
 
             $orderEntity->addPosition($positionEntity);
 
