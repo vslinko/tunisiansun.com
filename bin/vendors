@@ -1,0 +1,16 @@
+<?php
+
+$composer = "{$_ENV['HOME']}/composer.phar";
+
+if (!is_readable($composer)) {
+    $fp = fopen($composer, 'w+');
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, 'http://getcomposer.org/composer.phar');
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_exec($ch);
+    curl_close($ch);
+    fclose($fp);
+}
+
+chdir(__DIR__ . '/..');
+system("{$_ENV['_']} $composer install");
