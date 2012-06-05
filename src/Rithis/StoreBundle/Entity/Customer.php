@@ -119,6 +119,11 @@ class Customer implements UserInterface, \Serializable
     {
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function serialize()
     {
         return serialize(array($this->id, $this->email, $this->phone, $this->name, $this->password, $this->salt,

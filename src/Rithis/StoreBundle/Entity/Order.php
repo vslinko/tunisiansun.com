@@ -48,6 +48,22 @@ class Order implements \Serializable
         return $this->customer;
     }
 
+    public function getPrice()
+    {
+        $price = 0;
+
+        foreach ($this->positions as $position) {
+            $price += $position->getPrice() * $position->getCount();
+        }
+
+        return $price;
+    }
+
+    public function __toString()
+    {
+        return sprintf('Order #%d', $this->id);
+    }
+
     public function serialize()
     {
         return serialize(array($this->id, $this->positions, $this->customer));

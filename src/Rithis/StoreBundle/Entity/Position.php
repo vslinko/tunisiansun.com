@@ -51,6 +51,11 @@ class Position implements \Serializable
         return $this->price;
     }
 
+    public function __toString()
+    {
+        return sprintf('%s = %d * %d', $this->product->getName(), $this->price, $this->count);
+    }
+
     public function serialize()
     {
         return serialize(array($this->order, $this->product, $this->count, $this->price));
