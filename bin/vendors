@@ -1,6 +1,6 @@
 <?php
 
-$composer = "{$_ENV['HOME']}/composer.phar";
+$composer = "{$_SERVER['HOME']}/composer.phar";
 
 if (!is_readable($composer)) {
     $fp = fopen($composer, 'w+');
@@ -13,4 +13,4 @@ if (!is_readable($composer)) {
 }
 
 chdir(__DIR__ . '/..');
-system("{$_ENV['_']} $composer install");
+system("{$_SERVER['_']} $composer install");
