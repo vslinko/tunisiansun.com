@@ -6,10 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class BrandsController extends Controller
 {
-    public function getBrandAction($categorySlug, $brandSlug)
+    public function getBrandAction($slug)
     {
         $productRepository = $this->getDoctrine()->getRepository('RithisStoreBundle:Product');
-        $products = $productRepository->findByCategorySlugAndBrandSlug($categorySlug, $brandSlug);
+        $products = $productRepository->findByBrandSlug($slug);
 
         if (!$products) {
             throw $this->createNotFoundException();

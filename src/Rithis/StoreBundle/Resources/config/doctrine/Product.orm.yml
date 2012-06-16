@@ -33,6 +33,7 @@ Rithis\StoreBundle\Entity\Product:
             targetEntity: Brand
             inversedBy: products
             fetch: EAGER
+            nullable: true
             joinColumn:
                 name: brand_id
                 referencedColumnName: id

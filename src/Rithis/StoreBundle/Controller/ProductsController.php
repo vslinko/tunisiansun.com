@@ -6,11 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ProductsController extends Controller
 {
-    public function getProductAction($categorySlug, $brandSlug, $productSlug)
+    public function getProductAction($slug)
     {
-        $product = $this->getDoctrine()->getRepository('RithisStoreBundle:Product')->findOneBySlug($productSlug);
+        $product = $this->getDoctrine()->getRepository('RithisStoreBundle:Product')->findOneBySlug($slug);
 
-        if (!$product || $product->getCategory()->getSlug() != $categorySlug || $product->getBrand()->getSlug() != $brandSlug) {
+        if (!$product) {
             throw $this->createNotFoundException();
         }
 

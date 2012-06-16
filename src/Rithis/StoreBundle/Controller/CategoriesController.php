@@ -6,10 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class CategoriesController extends Controller
 {
-    public function getCategoryAction($categorySlug)
+    public function getCategoryAction($slug)
     {
         $productRepository = $this->getDoctrine()->getRepository('RithisStoreBundle:Product');
-        $products = $productRepository->findByCategorySlug($categorySlug);
+        $products = $productRepository->findByCategorySlug($slug);
 
         if (!$products) {
             throw $this->createNotFoundException();
