@@ -53,7 +53,7 @@
         {
             "package": "jms/translation-bundle",
             "version": "dev-master",
-            "source-reference": "019f1032846abec955ef1d2dc2623ecc30477ae3"
+            "source-reference": "3b96a2560ab26ba30c7ffcc88342c4ef20a597b6"
         },
         {
             "package": "knplabs/gaufrette",
@@ -68,7 +68,7 @@
         {
             "package": "knplabs/knp-menu",
             "version": "1.1.x-dev",
-            "source-reference": "v1.1.1"
+            "source-reference": "v1.1.2"
         },
         {
             "package": "knplabs/knp-menu-bundle",
@@ -90,7 +90,7 @@
         {
             "package": "sonata-project/admin-bundle",
             "version": "dev-master",
-            "source-reference": "779d6db64a92618c1a9aeb646842866bb125e7a2"
+            "source-reference": "280ea9b2124814f9acc8462939992883c734dd81"
         },
         {
             "package": "sonata-project/block-bundle",
@@ -105,12 +105,12 @@
         {
             "package": "sonata-project/doctrine-orm-admin-bundle",
             "version": "dev-master",
-            "source-reference": "36767018185a841733ed629b22b1407ec2b9b938"
+            "source-reference": "cf174bdadd07168f9f33d418f6fcc95012036d83"
         },
         {
             "package": "sonata-project/exporter",
             "version": "dev-master",
-            "source-reference": "bc5b4dadbaae30e5c349141f8d002063630a8084"
+            "source-reference": "bcdfd50bc3118173d914e790921701ab26fb6b14"
         },
         {
             "package": "sonata-project/jquery-bundle",
@@ -131,24 +131,18 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/symfony",
-            "version": "dev-master",
             "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
-        },
-        {
-            "package": "twig/twig",
-            "version": "dev-master",
-            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
             "alias-pretty-version": "1.8.x-dev",
             "alias-version": "1.8.9999999.9999999-dev"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
         }
     ],
     "packages-dev": null,

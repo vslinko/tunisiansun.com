@@ -10,6 +10,7 @@ framework:
     templating: { engines: [twig] }
     form: ~
     csrf_protection: ~
+    validation: ~
     session:
         auto_start: true
         lifetime: 604800 # 1 week

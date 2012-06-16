@@ -1,0 +1,71 @@
+Rithis\StoreBundle\Entity\Product:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: slug
+    properties:
+        name:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 255
+        slug:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 255
+        price:
+            - NotBlank: ~
+            - Min: 1
+            - Type: integer
+        description:
+            - NotBlank: ~
+            - MinLength: 15
+            - MaxLength: 65535
+        photo:
+            - NotBlank: ~
+            - Image: ~
+        category:
+            - NotBlank: ~
+            - Type: Rithis\StoreBundle\Entity\Category
+        brand:
+            - Type: Rithis\StoreBundle\Entity\Brand
+
+Rithis\StoreBundle\Entity\Category:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: slug
+    properties:
+        name:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 255
+        slug:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 255
+
+Rithis\StoreBundle\Entity\Brand:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: slug
+    properties:
+        name:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 255
+        slug:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 255
+
+Rithis\StoreBundle\Entity\Customer:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: phone
+    properties:
+        email:
+            - NotBlank: ~
+            - Email: ~
+            - MaxLength: 255
+        phone:
+            - NotBlank: ~
+            - Type: integer
+        name:
+            - NotBlank: ~
+            - MinLength: 3
+            - MaxLength: 255

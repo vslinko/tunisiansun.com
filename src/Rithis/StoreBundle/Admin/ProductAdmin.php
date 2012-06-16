@@ -31,7 +31,7 @@ class ProductAdmin extends Admin
             ->add('description')
             ->add('photo', 'file')
             ->add('category', 'sonata_type_model')
-            ->add('brand', 'sonata_type_model');
+            ->add('brand', 'sonata_type_model', array('required' => false));
     }
 
     protected function configureListFields(ListMapper $listMapper)
