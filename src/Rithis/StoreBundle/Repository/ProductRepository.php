@@ -31,4 +31,27 @@ class ProductRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findByQuery($query)
+    {
+        // TODO: OPTIMIZE!!!
+
+        $qb = $this->_em->createQueryBuilder();
+        $qb->select('p', 'c', 'b');
+        $qb->from('RithisStoreBundle:Product', 'p');
+        $qb->join('p.category', 'c');
+        $qb->join('p.brand', 'b');
+
+        $pieces = explode(' ', $query);
+        foreach ($pieces as $i => $piece) {
+            foreach (array('p.name', 'p.description', 'b.name') as $property) {
+                $qb->orWhere($qb->expr()->like($property, '?' . $i));
+            }
+            $pieces[$i] = '%' . $piece . '%';
+        }
+
+        $qb->setParameters($pieces);
+
+        return $qb->getQuery()->getResult();
+    }
 }

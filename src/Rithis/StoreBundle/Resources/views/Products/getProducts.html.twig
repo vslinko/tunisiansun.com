@@ -1,6 +1,11 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
+    <form action="{{ path('rithis_store_get_products') }}">
+        <input type="text" name="query" value="{{ query }}" />
+        <input type="submit" value="Search" />
+    </form>
+
     {% for product in products %}
         {% include "RithisStoreBundle::product.html.twig" %}
     {% endfor %}

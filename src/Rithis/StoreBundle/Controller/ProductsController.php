@@ -3,6 +3,7 @@
 namespace Rithis\StoreBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ProductsController extends Controller
 {
@@ -17,17 +18,21 @@ class ProductsController extends Controller
         return $this->render('RithisStoreBundle:Products:getProduct.html.twig', array('product' => $product));
     }
 
-    public function getProductsAction()
+    public function getProductsAction(Request $request)
     {
         $productRepository = $this->getDoctrine()->getRepository('RithisStoreBundle:Product');
-        $products = $productRepository->findAll();
 
-        if (!$products) {
-            throw $this->createNotFoundException();
+        $query = $request->query->get('query');
+
+        if ($query) {
+            $products = $productRepository->findByQuery($query);
+        } else {
+            $products = $productRepository->findAll();
         }
 
         return $this->render('RithisStoreBundle:Products:getProducts.html.twig', array(
             'products' => $products,
+            'query' => $query,
         ));
     }
 }
