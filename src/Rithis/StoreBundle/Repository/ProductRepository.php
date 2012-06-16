@@ -54,4 +54,21 @@ class ProductRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+    public function findTop($limit = 5)
+    {
+        $dql = 'SELECT p, pos, SUM(pos.count) AS s FROM RithisStoreBundle:Position pos INNER JOIN pos.product p GROUP BY p ORDER BY s DESC';
+
+        $result = $this->_em->createQuery($dql)
+            ->setMaxResults($limit)
+            ->getResult();
+
+        $products = array();
+
+        foreach ($result as $row) {
+            $products[] = $row[0]->getProduct();
+        }
+
+        return $products;
+    }
 }

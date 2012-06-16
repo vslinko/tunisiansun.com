@@ -52,6 +52,12 @@ rithis_store_get_products:
     requirements:
         _method: GET
 
+rithis_store_get_top_products:
+    pattern: /products/top
+    defaults: { _controller: RithisStoreBundle:Products:getTopProducts }
+    requirements:
+        _method: GET
+
 rithis_store_get_product:
     pattern: /products/{slug}
     defaults: { _controller: RithisStoreBundle:Products:getProduct }

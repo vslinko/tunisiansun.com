@@ -35,4 +35,15 @@ class ProductsController extends Controller
             'query' => $query,
         ));
     }
+
+    public function getTopProductsAction()
+    {
+        $productRepository = $this->getDoctrine()->getRepository('RithisStoreBundle:Product');
+
+        $products = $productRepository->findTop();
+
+        return $this->render('RithisStoreBundle:Products:getTopProducts.html.twig', array(
+            'products' => $products,
+        ));
+    }
 }
