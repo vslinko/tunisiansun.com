@@ -22,15 +22,33 @@ rithis_store_post_cart_products:
     requirements:
         _method: POST
 
+rithis_store_get_categories:
+    pattern: /categories
+    defaults: { _controller: RithisStoreBundle:Categories:getCategories }
+    requirements:
+        _method: GET
+
 rithis_store_get_category:
     pattern: /categories/{slug}
     defaults: { _controller: RithisStoreBundle:Categories:getCategory }
     requirements:
         _method: GET
 
+rithis_store_get_brands:
+    pattern: /brands
+    defaults: { _controller: RithisStoreBundle:Brands:getBrands }
+    requirements:
+        _method: GET
+
 rithis_store_get_brand:
     pattern: /brands/{slug}
     defaults: { _controller: RithisStoreBundle:Brands:getBrand }
+    requirements:
+        _method: GET
+
+rithis_store_get_products:
+    pattern: /products
+    defaults: { _controller: RithisStoreBundle:Products:getProducts }
     requirements:
         _method: GET
 

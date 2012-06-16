@@ -1,0 +1,7 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    {% for product in products %}
+        {% include "RithisStoreBundle::product.html.twig" %}
+    {% endfor %}
+{% endblock %}

@@ -22,4 +22,18 @@ class CategoriesController extends Controller
             'products' => $products
         ));
     }
+
+    public function getCategoriesAction()
+    {
+        $categoryRepository = $this->getDoctrine()->getRepository('RithisStoreBundle:Category');
+        $categories = $categoryRepository->findAll();
+
+        if (!$categories) {
+            throw $this->createNotFoundException();
+        }
+
+        return $this->render('RithisStoreBundle:Categories:getCategories.html.twig', array(
+            'categories' => $categories,
+        ));
+    }
 }

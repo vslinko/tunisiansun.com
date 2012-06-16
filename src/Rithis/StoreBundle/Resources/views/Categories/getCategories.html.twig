@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    {% for category in categories %}
+        <h1>{{ category }}</h1>
+        {% for product in category.products %}
+            {% include "RithisStoreBundle::product.html.twig" %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

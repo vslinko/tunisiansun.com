@@ -24,4 +24,18 @@ class BrandsController extends Controller
             'products' => $products
         ));
     }
+
+    public function getBrandsAction()
+    {
+        $brandRepository = $this->getDoctrine()->getRepository('RithisStoreBundle:Brand');
+        $brands = $brandRepository->findAll();
+
+        if (!$brands) {
+            throw $this->createNotFoundException();
+        }
+
+        return $this->render('RithisStoreBundle:Brands:getBrands.html.twig', array(
+            'brands' => $brands,
+        ));
+    }
 }
